@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <title>6.894 Final Project</title>
+</head>
+
+<body>
+    <!-- separate tabs for each category; might change to scroll later -->
+  <div class="category" id="tabs">
+    <a href="index.html">Home</a>
+    <a href="mobility.html">Mobility</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="traffic.html">Transportation</a>
+    <a href="schooling.html" class="active">Schooling</a>
+  </div>
+
+  <div class="mainpage" id="worldSchoolRestrictionsContainer" style="width:100%;">
+    <h2> World School Closures </h2>
+    <p> In an attempt to reduce the rate of spread of COVID-19 and to "flatten the curve", countries across the world have gradually mandated school closures. </p>
+    <p> The visualization below shows how various countries progressively closed schools starting with China in early January, nothing very interesting happens until around February 22nd 2020 so you might want to jump forward a bit. Other countries, namely Iran and Italy also closed their schools around February 22nd and 23rd 2020, with many other countries following suit thereafter. </p>
+    <p> Although some countries recommended partial school closures in affected school areas (light blue), in many cases these recommendations soon changed into generalized nationwide school closures (dark blue). Other countries directly closed schools nationwide. </p>
+    <p> Disclaimer: the white colored countries on March 30th that do not have a tooltip attached are countries that the dataset does not track.</p>
+
+    <div class="slidecontainer"  style="width:600px;">
+      <input type="range" step="1" value="0" min="0" max="10" class="slider" id="schoolRestrictionRange">
+      <button type="button" id="SchoolRestrictionDateStepBack"><</button>
+      <button type="button" id="SchoolRestrictionDateStepForward">></button>
+      <button type="button" id="SchoolRestrictionDateStepPlay" class="play-button">Play</button>
+      <label for="schoolRestrictionRange" id="SchoolRestrictionDateLabel"></label>
+    </div>
+    <div id="worldSchoolRestrictions"  style="width:600px;"/>
+  </div>
+
+  <div class="mainpage" id="map">
+    <h2>State School Closures</h2>
+
+    <p> As it became clear that packed classrooms were unsafe for students, US states began shutting down their schools, many of them ahead of any official Stay-At-Home Order.  </p>
+    <p>Data source: [https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html]</p>
+    <p>To-Dos:
+        1) Add state name on hover
+        2) Fix Play button positioning (make it dynamic)
+        3) Add more information on the type of closure (recommended/enforced/etc.)</p>
+    <button id="play-button" class="play-button">Play</button>
+  </div>
+
+<!-- If using js, use schooling.js -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<!-- Load d3plus.js -->
+<script src="https://d3plus.org/js/d3plus.v2.0.0-alpha.17.full.min.js"></script>
+
+<!-- document.write('<scr' + 'ipt src="schooling.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>'); -->
+<script>
+document.write('<scr' + 'ipt src="stateschooling.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>');
+</script>
+
+</body>

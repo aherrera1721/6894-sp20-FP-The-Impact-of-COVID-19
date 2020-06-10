@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>The Impact of COVID-19</title>
+</head>
+
+<body>
+  <span id="load-status">Loading...</span>
+
+  <div class="mainpage" style="display:none">
+
+    <!-- Introduction -->
+    <div class="section" id="introduction">
+      <h1>The Impact of COVID-19</h1>
+      <p>We are currently in the thick of a pandemic that has drastically altered various aspects of life as we know it.</p>
+      <p>There have been extensive visualizations in the media on the spread of the disease, mortality rates, and various other cold metrics.</p>
+      <p>However, relatively less attention has been paid to the effects of the outbreak that are felt on a more personal level.</p>
+      <p> The project aims to address this by providing a number of visualizations that examine a selection of these repercussions. </p>
+      <br><br>
+      <p>Scroll down to start exploring!</p>
+    </div>
+
+    <!-- Mobility -->
+    <div class="section" id="mobility">
+      <div class="description">
+        <h2>Mobility</h2>
+        <p> The explosive global spread of COVID-19 around mid-March has left almost every country scrambling to stop the virus in its tracks. As a result of the "social distancing" guidelines, foot traffic for public venues and events has effectively ceased. </p>
+        <p>Mobility trends for the five countries with the highest number of cumulative cases (as of 05/13/2020) are shown below. Residential areas have seen a general increase in traffic, while activity for other categories that are more public in nature has dropped dramatically. </p>
+      </div>
+      <div class="vis" id="mobility-vis"></div>
+    </div>
+
+
+    <!-- World Schools -->
+    <div class="section" id="world-schools">
+      <div class="description">
+        <h2> World School Closures </h2>
+        <p> In an attempt to reduce the rate of spread of COVID-19 and "flatten the curve", countries across the world have gradually mandated school closures. </p>
+        <!-- <p> The visualization below shows how various countries progressively closed schools starting with China in early January, nothing very interesting happens until around February 22nd 2020 so you might want to jump forward a bit. Other countries, namely Iran and Italy also closed their schools around February 22nd and 23rd 2020, with many other countries following suit thereafter. </p> -->
+        <p> Although some countries recommended partial school closures in affected areas (light blue), in many cases these recommendations soon changed into generalized nationwide school closures (dark blue). Other countries immediately closed schools nationwide. </p>
+        <!-- <p> Note: the white colored countries on March 30th that do not have a tooltip attached are countries that the dataset does not track.</p> -->
+        <p> Note: Countries that do not have a tooltip attached are not represented in the dataset.</p>
+      </div>
+      <div class="vis" id="world-schools-vis">
+        <div class="slidecontainer">
+          <input type="range" step="1" value="0" min="0" max="10" class="slider" id="schoolRestrictionRange">
+          <button type="button" id="SchoolRestrictionDateStepBack"><</button>
+          <button type="button" id="SchoolRestrictionDateStepForward">></button>
+          <button type="button" id="SchoolRestrictionDateStepPlay" class="play-button">Play</button>
+          <label for="schoolRestrictionRange" id="SchoolRestrictionDateLabel"></label>
+        </div>
+        <div id="worldSchoolRestrictions"></div>
+      </div>
+    </div>
+
+
+    <!-- US Schools -->
+    <div class="section" id="us-schools">
+      <div class="description">
+        <h2>State School Closures</h2>
+        <p> As it became clear that packed classrooms were an unsafe environment for students, US states began shutting down their schools, many of them ahead of any official Stay-At-Home Order.  </p>
+        <button id="play-button-us-schools" class="play-button">Play</button>
+        <button id="reset-button-us-schools" class="play-button">Reset</button>
+      </div>
+      <div class="vis" id="us-schools-vis">
+      </div>
+    </div>
+
+
+    <!-- Restaurants -->
+    <div class="section" id="restaurants">
+      <div class="description">
+        <h2>Restaurant traffic </h2>
+        <p>A state of national emergency was declared in the United States on March 13th. Subsequently, countless restaurants have suffered losses in sales and have had to temporarily suspend their business or find alternate measures to continue serving.</p>
+
+        <p>Hover over each state to see the state-level graph. </p>
+        <button id="play-button-restaurants" class="play-button">Play</button>
+        <button id="reset-button-restaurants" class="play-button">Reset</button>
+        <div id="restaurants-vis-small"> </div>
+      </div>
+      <div class="vis" id="restaurants-vis-container">
+      </div>
+    </div>
+
+
+    <!-- Flights -->
+    <div class="section" id="flightVolumeContainer">
+      <div class="description">
+        <h2> Flight Volume data </h2>
+        <p> As more countries started to restrict non-essential travel or even ban international flights altogether, the aviation industry has seen a severe decline in traffic. </p>
+        <p> The flight volume graph below shows the number of daily commercial flights (Commercial passenger flights, cargo flights, charter flights, some business jet flights) and all flights (commercial flights + more business jet flights, private flights, gliders, most helicopter flights, most ambulance flights, government flights, some military flights, drones). </p>
+        <p> As of mid-March, we see a sharp decline in the number of daily flights across the world. </p>
+      </div>
+      <div class="vis" id="flightVolume"></div>
+    </div>
+
+
+    <!-- Traffic Collisions -->
+    <div class="section" id="traffic-collisions">
+      <div class="description">
+        <h2>Traffic Collisions in LA County</h2>
+        <p>One upside of the decrease in mobility for non-essential activities is the decrease in traffic collisions across the nation. </p>
+          <p>For instance, the daily number of reported traffic collisions in Los Angeles County is typically around 140 collisions. After the Stay-At-Home Order that took into effect on March 19, 2020, the daily number of reported traffic collisions decreased drastically to around 60 collisions. </p>
+            <p>With less accidents happening on the road, more resources can be allocated towards fighting COVID-19! </p>
+        <button id="play-button" class="play-button">Play</button>
+
+      </div>
+      <div class="vis" id="traffic-collisions-vis">
+      </div>
+    </div>
+
+
+  </div>
+
+<!--  -->
+
+
+
+  <!-- scripts -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <script src="https://d3plus.org/js/d3plus.v2.0.0-alpha.17.full.min.js"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script>
+  document.write('<scr' + 'ipt src="google-mobility.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>');
+  document.write('<scr' + 'ipt src="schooling.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>');
+  document.write('<scr' + 'ipt src="restaurants.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>');
+  document.write('<scr' + 'ipt src="mobility.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>');
+  document.write('<scr' + 'ipt src="trafficcollisions.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>')
+  </script>
+  <script>
+  document.write('<scr' + 'ipt src="test.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>')
+  </script>
+</body>

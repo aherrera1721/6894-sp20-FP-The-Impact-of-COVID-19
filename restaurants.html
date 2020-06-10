@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>6.894 Final Project</title>
+</head>
+<body>
+    <!-- separate tabs for each category; might change to scroll later -->
+  <div class="category" id="tabs">
+    <a href="index.html">Home</a>
+    <a href="mobility.html">Mobility</a>
+    <a href="restaurants.html" class="active">Restaurants</a>
+    <a href="traffic.html">Transportation</a>
+    <a href="schooling.html">Schooling</a>
+  </div>
+
+  <div class="mainpage">
+    <h1>Restaurants</h1>
+
+    <div class="section" id="restaurants">
+        <h2>Restaurant traffic </h2>
+
+        <p>A state of national emergency was declared in the United States on March 13th. Subsequently, countless restaurants have suffered losses in sales and have had to temporarily suspend their business or find alternate measures to continue serving.</p>
+
+        <p>* to be added: play/pause button, hover over state to see state-level line graph, more information about specific key dates</p>
+
+        <div id="restaurants-viz-container"></div>
+    </div>
+
+  </div>
+
+<!-- If using js, use lifestyle.js -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script>
+document.write('<scr' + 'ipt src="restaurants.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>');
+</script>
+
+</body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>6.894 Final Project</title>
+
+</head>
+
+<body>
+    <!-- separate tabs for each category; might change to scroll later -->
+  <div class="category" id="tabs">
+    <a href="index.html">Home</a>
+    <a href="mobility.html" class="active">Mobility</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="traffic.html">Transportation</a>
+    <a href="schooling.html">Schooling</a>
+  </div>
+
+  <div class="mainpage">
+    <h1>Mobility</h1>
+
+    <div class="section" id="google-mobility">
+        <p> The explosive global spread of COVID-19 around mid-March has left almost every country scrambling to stop the virus in its tracks. As a result of the "social distancing" guidelines, foot traffic for public venues and events has effectively ceased. </p>
+
+        <p>Mobility trends for the five countries with the most number of cases (as of 05/08/2020) are shown below. Residential areas have seen a general increase in traffic, while activity for other categories that are more public in nature has dropped dramatically. </p>
+
+        <div id="mobility-viz"></div>
+    </div>
+  </div>
+
+<!-- If using js, use mobility.js -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script>
+document.write('<scr' + 'ipt src="google-mobility.js?cb=' + new Date().getTime() + '"></scr' + 'ipt>');
+</script>
+
+</body>
